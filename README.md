@@ -1,0 +1,1 @@
+This repository should be a basic html page using the first block of the Odin Project lessons.
