@@ -1,1 +1,1 @@
-This repository should be a basic html page using the first block of the Odin Project 
+This repository has the latest version of libft, for use in C projects while attending 42 school. 
