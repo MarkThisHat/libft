@@ -12,15 +12,28 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
 # define INT_MAX 2147483647
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct s_node
+{
+	char	*buffer;
+	int		start;
+	int		end;
+	int		size;
+	int		parsed;
+}			t_node;
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -65,5 +78,20 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+char	*get_next_line(int fd);
+char	*read_fd(int fd, t_node old, t_node *mod_new, int size);
+int		create_node(t_node *node, int fd);
+char	*create_line(char *line, char *append, int copy_amount, int size);
+void	free_node(t_node *node);
+int		ft_printf(const char *str, ...);
+int		print_in(const char *str, va_list args, int count);
+int		i_specif(const char *str, va_list args, int count, int mode);
+int		p_specif(const char *str, va_list args, int count);
+int		u_specif(const char *str, va_list args, int count);
+int		s_specif(const char *str, va_list args, int count);
+int		count_signs(const char *str, va_list args, int count);
+int		print_base(unsigned long n, int base, int upp);
+int		print_str(char *str);
+int		print_int(int n);
 
 #endif

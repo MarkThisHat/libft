@@ -6,11 +6,11 @@
 /*   By: maalexan <maalexan@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:05:42 by maalexan          #+#    #+#             */
-/*   Updated: 2022/12/08 18:06:25 by maalexan         ###   ########.fr       */
+/*   Updated: 2022/12/29 16:58:32 by maalexan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	print_base(unsigned long n, int base, int upp)
 {
